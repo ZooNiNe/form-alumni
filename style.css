@@ -174,7 +174,7 @@ body {
 
 .preview-grid {
     display: grid;
-    grid-template-columns: 100px 1fr; /* Kolom label lebih kecil */
+    grid-template-columns: 100px 1fr;
     gap: 16px;
     margin-bottom: 25px;
 }
@@ -189,7 +189,7 @@ body {
 .preview-value {
     font-weight: 500;
     color: #ffffff;
-    word-break: break-word; /* Mencegah teks panjang meluber */
+    word-break: break-word;
 }
 
 .preview-foto-container {
@@ -216,14 +216,16 @@ body {
     font-style: italic;
 }
 
+/* --- PERUBAHAN UTAMA ADA DI SINI --- */
 .modal-buttons {
     display: flex;
-    gap: 15px;
+    flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+    gap: 10px; /* Jarak antar tombol */
     margin-top: 35px;
 }
 
 .modal-buttons button {
-    flex-grow: 1;
+    width: 100%; /* Membuat tombol memenuhi lebar kontainer */
     padding: 13px;
     border-radius: 10px;
     font-size: 1rem;
@@ -231,11 +233,14 @@ body {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+/* --- AKHIR DARI PERUBAHAN UTAMA --- */
+
 
 .btn-edit {
     background-color: transparent;
     color: #a0a0a0;
     border: 1px solid #555;
+    order: 2; /* Tombol "Ubah Data" berada di bawah */
 }
 
 .btn-edit:hover {
@@ -247,6 +252,7 @@ body {
     border: none;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
     color: #ffffff;
+    order: 1; /* Tombol "Kirim" berada di atas */
 }
 
 .btn-confirm:hover {
@@ -267,26 +273,21 @@ body {
     }
 
     .preview-grid {
-        grid-template-columns: 1fr; /* Grid menjadi 1 kolom */
+        grid-template-columns: 1fr;
         gap: 8px;
     }
 
     .preview-label {
-        text-align: left; /* Label tidak lagi di kanan */
+        text-align: left;
         font-size: 0.8rem;
         font-weight: 500;
         color: #888;
         padding-right: 0;
-        margin-bottom: 2px; /* Jarak antara label dan value */
+        margin-bottom: 2px;
     }
 
     .preview-value {
         padding-bottom: 8px;
         border-bottom: 1px solid #333;
-    }
-    
-    .modal-buttons {
-        flex-direction: column-reverse; /* Tombol "Kirim" di atas */
-        gap: 10px;
     }
 }
