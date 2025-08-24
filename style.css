@@ -174,7 +174,7 @@ body {
 
 .preview-grid {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 100px 1fr; /* Kolom label lebih kecil */
     gap: 16px;
     margin-bottom: 25px;
 }
@@ -189,7 +189,7 @@ body {
 .preview-value {
     font-weight: 500;
     color: #ffffff;
-    word-break: break-word;
+    word-break: break-word; /* Mencegah teks panjang meluber */
 }
 
 .preview-foto-container {
@@ -216,7 +216,6 @@ body {
     font-style: italic;
 }
 
-/* --- PERUBAHAN UTAMA ADA DI SINI --- */
 .modal-buttons {
     display: flex;
     flex-direction: column; /* Mengubah tata letak menjadi vertikal */
@@ -233,8 +232,6 @@ body {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
-/* --- AKHIR DARI PERUBAHAN UTAMA --- */
-
 
 .btn-edit {
     background-color: transparent;
@@ -273,21 +270,26 @@ body {
     }
 
     .preview-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Grid menjadi 1 kolom */
         gap: 8px;
     }
 
     .preview-label {
-        text-align: left;
+        text-align: left; /* Label tidak lagi di kanan */
         font-size: 0.8rem;
         font-weight: 500;
         color: #888;
         padding-right: 0;
-        margin-bottom: 2px;
+        margin-bottom: 2px; /* Jarak antara label dan value */
     }
 
     .preview-value {
         padding-bottom: 8px;
         border-bottom: 1px solid #333;
+    }
+    
+    .modal-buttons {
+        flex-direction: column-reverse; /* Tombol "Kirim" di atas */
+        gap: 10px;
     }
 }
