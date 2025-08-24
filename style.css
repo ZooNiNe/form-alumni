@@ -122,36 +122,34 @@ body {
     box-shadow: 0 6px 15px rgba(0, 200, 255, 0.2);
 }
 
+
 /* ======================================================= */
-/* REVISI CSS POP-UP PREVIEW (Minimalis & Profesional)   */
+/* REVISI CSS POP-UP PREVIEW (Minimalis & Mobile-Friendly) */
 /* ======================================================= */
 
-/* Latar belakang gelap semi-transparan */
 .modal-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Lebih gelap untuk kontras lebih baik */
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     display: none;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    backdrop-filter: blur(5px); /* Efek blur pada latar belakang */
+    backdrop-filter: blur(5px);
 }
 
-/* Class 'active' untuk menampilkan pop-up */
 .modal-backdrop.active {
     display: flex;
 }
 
-/* Kotak konten pop-up */
 .modal-content {
-    background-color: #2a2a2e; /* Sedikit lebih terang dari form */
-    padding: 35px 40px;
-    border-radius: 16px; /* Sudut lebih tumpul */
+    background-color: #2a2a2e;
+    padding: 30px 35px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 1px solid #444;
     width: 100%;
@@ -164,36 +162,36 @@ body {
     text-align: center;
     margin-bottom: 10px;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .modal-content > p {
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #b0b0b0;
     margin-bottom: 30px;
 }
 
-/* Tata letak grid untuk data */
 .preview-grid {
     display: grid;
-    grid-template-columns: 120px 1fr; /* Kolom label dan kolom data */
-    gap: 18px; /* Jarak antar baris dan kolom */
+    grid-template-columns: 100px 1fr; /* Kolom label lebih kecil */
+    gap: 16px;
     margin-bottom: 25px;
 }
 
 .preview-label {
-    font-weight: 300; /* Lebih tipis */
+    font-weight: 300;
     color: #b0b0b0;
     text-align: right;
+    padding-right: 10px;
 }
 
 .preview-value {
-    font-weight: 500; /* Lebih tebal */
+    font-weight: 500;
     color: #ffffff;
+    word-break: break-word; /* Mencegah teks panjang meluber */
 }
 
-/* Wadah untuk preview foto */
 .preview-foto-container {
     display: flex;
     flex-direction: column;
@@ -205,8 +203,8 @@ body {
 
 #preview-foto {
     display: none;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 120px;
+    max-height: 120px;
     border-radius: 10px;
     margin-top: 15px;
     border: 2px solid #555;
@@ -218,7 +216,6 @@ body {
     font-style: italic;
 }
 
-/* Tombol Aksi */
 .modal-buttons {
     display: flex;
     gap: 15px;
@@ -226,7 +223,7 @@ body {
 }
 
 .modal-buttons button {
-    flex-grow: 1; /* Membuat kedua tombol sama lebar */
+    flex-grow: 1;
     padding: 13px;
     border-radius: 10px;
     font-size: 1rem;
@@ -235,7 +232,6 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-/* Tombol sekunder (Ubah Data) */
 .btn-edit {
     background-color: transparent;
     color: #a0a0a0;
@@ -247,7 +243,6 @@ body {
     color: #ffffff;
 }
 
-/* Tombol primer (Kirim) */
 .btn-confirm {
     border: none;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
@@ -257,4 +252,41 @@ body {
 .btn-confirm:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 15px rgba(0, 150, 255, 0.3);
+}
+
+/* ================================================= */
+/* ATURAN UNTUK TAMPILAN MOBILE (RESPONSIVE)         */
+/* ================================================= */
+@media (max-width: 500px) {
+    .registration-form {
+        padding: 25px;
+    }
+
+    .modal-content {
+        padding: 25px 20px;
+    }
+
+    .preview-grid {
+        grid-template-columns: 1fr; /* Grid menjadi 1 kolom */
+        gap: 8px;
+    }
+
+    .preview-label {
+        text-align: left; /* Label tidak lagi di kanan */
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #888;
+        padding-right: 0;
+        margin-bottom: 2px; /* Jarak antara label dan value */
+    }
+
+    .preview-value {
+        padding-bottom: 8px;
+        border-bottom: 1px solid #333;
+    }
+    
+    .modal-buttons {
+        flex-direction: column-reverse; /* Tombol "Kirim" di atas */
+        gap: 10px;
+    }
 }
