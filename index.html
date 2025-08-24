@@ -10,32 +10,77 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
         <form class="registration-form" id="alumniForm">
             <div class="form-header">
-                <img src="logo-ponpes.png" alt="Logo Ponpes" class="logo">
+                <img src="logo-ponpes.png" alt="Logo Pesantren" class="logo">
                 <h2>REGISTRASI ALUMNI</h2>
                 <p>Pondok Pesantren Al Falah Cijiwa</p>
             </div>
+
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
             </div>
+
             <div class="form-group">
                 <label for="angkatan">Angkatan / Tahun Masuk</label>
                 <input type="number" id="angkatan" name="angkatan" placeholder="Contoh: 2022" required>
             </div>
+
             <div class="form-group">
                 <label for="whatsapp">WhatsApp</label>
                 <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 085812345678" required>
             </div>
+
             <div class="form-group">
                 <label for="alamat">Kecamatan, Kota/Kabupaten</label>
-                <input type="text" id="alamat" name="alamat" placeholder="Contoh: Cibogo Wetan, Serpong - Tangerang" required>
+                <input type="text" id="alamat" name="alamat" placeholder="Contoh: Cibogo Wetan, Serpong" required>
             </div>
+
+            <div class="form-group">
+                <label for="foto">Pas Foto (Opsional)</label>
+                <input type="file" id="foto" name="foto" accept="image/jpeg, image/png">
+            </div>
+
             <button type="submit" class="submit-btn">Kirim</button>
         </form>
     </div>
+
+    <div class="modal-backdrop" id="previewModal">
+        <div class="modal-content">
+            <h3>Konfirmasi Data Anda</h3>
+            <p>Mohon periksa kembali data di bawah ini sebelum mengirim.</p>
+            
+            <div class="preview-grid">
+                <div class="preview-label">Nama</div>
+                <div class="preview-value" id="preview-nama"></div>
+            
+                <div class="preview-label">Angkatan</div>
+                <div class="preview-value" id="preview-angkatan"></div>
+            
+                <div class="preview-label">WhatsApp</div>
+                <div class="preview-value" id="preview-whatsapp"></div>
+            
+                <div class="preview-label">Alamat</div>
+                <div class="preview-value" id="preview-alamat"></div>
+            </div>
+            
+            <div class="preview-foto-container">
+                <div class="preview-label">Pas Foto</div>
+                <img id="preview-foto" src="" alt="Preview Foto">
+                <span id="preview-foto-kosong">Tidak ada foto diupload.</span>
+            </div>
+            </div>
+
+            <div class="modal-buttons">
+                <button type="button" class="btn-edit" id="cancel-btn">Ubah Data</button>
+                <button type="button" class="btn-confirm" id="confirm-btn">Ya, Kirim Sekarang</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
